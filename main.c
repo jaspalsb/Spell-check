@@ -1,4 +1,3 @@
-/*Jaspal Bainiwal */
 #include "hash.h"
 #include <assert.h>
 #include <time.h>
@@ -137,10 +136,16 @@ int main(int argc, const char** argv)
 	{
 		printf("Enter a word or \"quit\" to quit: ");
 		scanf("%s", inputBuffer);
-				if (strcmp(inputBuffer, "quit") == 0)
+    		for (int i = 0, n = strlen(inputBuffer); i < n; i++)
+			{
+				inputBuffer[i] = tolower(inputBuffer[i]);
+			}
+		if (strcmp(inputBuffer, "quit") == 0)
 		{
 			quit = 1;
 		}
+    else
+    {
 		// Implement the spell checker code here..
 		HashLink *spellchecker;
 		int bucketSize = hashMapCapacity(map);
@@ -169,7 +174,7 @@ int main(int argc, const char** argv)
 		if (search == 0)
 		{
 			//now if the word has been checked against the dictionary map and still has not been found that means it is spelled incorrectly
-			printf("word spelled incorrectly \n");
+			printf("The word was spelled incorrectly \n");
 			int len1 = strlen(inputBuffer);
 			int counter = 0;
 			int len2;
@@ -199,6 +204,7 @@ int main(int argc, const char** argv)
 			}
 		}
 	}
+  }
 
 	hashMapDelete(map);
 	return 0;
