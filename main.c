@@ -98,7 +98,6 @@ char* nextWord(FILE* file)
 */
 void loadDictionary(FILE* file, HashMap* map)
 {
-	// FIXME: implement
 	char *getWord = nextWord(file);
 	//now loading the dictiionary is a little different from the concordance but very similar. 
 	//for loading I only have to add it to the hashtable once so I need to just use the hashmapput function
@@ -120,7 +119,6 @@ void loadDictionary(FILE* file, HashMap* map)
 */
 int main(int argc, const char** argv)
 {
-	// FIXME: implement
 	HashMap* map = hashMapNew(1000);
 
 	FILE* file = fopen("wordBank.txt", "r");
