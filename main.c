@@ -142,8 +142,8 @@ int main(int argc, const char** argv)
 		{
 			quit = 1;
 		}
-    else
-    {
+    		else
+    		{
 		// Implement the spell checker code here..
 		HashLink *spellchecker;
 		int bucketSize = hashMapCapacity(map);
